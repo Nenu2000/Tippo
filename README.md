@@ -17,12 +17,21 @@ verfolge deinen Fortschritt.
 
 ## Schnellstart
 
-1. Öffne [`Tippo.html`](Tippo.html) in einem aktuellen Browser.
+1. Öffne [Tippo online](https://nenu2000.github.io/Tippo/) oder
+   [`Tippo.html`](Tippo.html) in einem aktuellen Browser.
 2. Wähle einen Text aus der Seitenleiste oder füge deinen eigenen hinzu.
 3. Tippe direkt los oder starte einen Schreibtest, um ein Ergebnis zu speichern.
 
 Du brauchst keine Installation, keinen Build-Schritt und keine externen
 Abhängigkeiten.
+
+## Veröffentlichung
+
+Jeder Push auf `main` veröffentlicht Tippo automatisch über GitHub Pages.
+Die Startseite wird bei der Veröffentlichung direkt aus `Tippo.html` erzeugt,
+damit die App-Datei die einzige Quelle bleibt. Die Veröffentlichung lässt sich
+außerdem unter **Actions → Deploy Tippo to GitHub Pages → Run workflow**
+manuell starten.
 
 ## Daten und Datenschutz
 

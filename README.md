@@ -135,3 +135,8 @@ Alternativ kannst du [`Tippo.html`](Tippo.html) herunterladen und lokal öffnen.
 git clone https://github.com/nenu2000/Tippo.git
 cd Tippo
 # Tippo.html im Browser öffnen (z. B. per Doppelklick)
+
+
+1. **Code mithilfe von DeepSeek und Claude gebaut.**
+2. **README geschrieben von DeepSeek.**
+3. **© 2026 nenu2000 – All Rights Reserved.**

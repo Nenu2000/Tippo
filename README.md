@@ -15,6 +15,7 @@
 [![No Dependencies](https://img.shields.io/badge/dependencies-none-success)](Tippo.html)
 [![No Build Step](https://img.shields.io/badge/build%20step-none-success)](Tippo.html)
 [![Privacy First](https://img.shields.io/badge/privacy-local%20only-blueviolet)](Tippo.html)
+[![All Rights Reserved](https://img.shields.io/badge/license-All%20Rights%20Reserved-red)](Tippo.html)
 
 **[Schnellstart](#-schnellstart)** ·
 **[Funktionen](#-funktionen)** ·
@@ -40,7 +41,8 @@
 - [FAQ](#-faq)
 - [Roadmap](#-roadmap)
 - [Mitwirken](#-mitwirken)
-- [Lizenz](#-lizenz)
+- [Lizenz & Copyright](#-lizenz--copyright)
+- [Credits & Danksagungen](#-credits--danksagungen)
 
 ---
 

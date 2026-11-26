@@ -1,0 +1,42 @@
+name: Tippo Windows
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    env:
+      TIPPO_REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+      RUSTFLAGS: -C target-feature=+crt-static
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rust vorbereiten
+        run: |
+          rustup update stable
+          rustup default stable
+          cargo generate-lockfile
+      - name: Rust- und Oberflächentests
+        run: cargo test --locked
+      - name: Windows-EXE bauen
+        run: cargo build --locked --release
+      - name: Windows-Paket
+        shell: pwsh
+        run: |
+          $manifest = Get-Content Cargo.toml -Raw
+          $version = [regex]::Match($manifest, '(?m)^version = "([^"]+)"').Groups[1].Value
+          if (!$version) { throw 'Version fehlt in Cargo.toml' }
+          $null = New-Item -ItemType Directory -Force -Path dist
+          $exe = "Tippo-v$version.exe"
+          Copy-Item -LiteralPath target/release/tippo.exe -Destination "dist/$exe"
+          $hash = (Get-FileHash -LiteralPath "dist/$exe" -Algorithm SHA256).Hash.ToLowerInvariant()
+          Set-Content -LiteralPath "dist/SHA256.txt" -Value "$hash  $exe" -Encoding ascii
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Tippo-Windows-x64
+          path: dist/
+          if-no-files-found: error

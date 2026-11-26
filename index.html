@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="de" data-pg="start">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#070708">
+  <meta name="description" content="Tippo – Schreibtraining für Klasse 7–10 mit Übungen, Tests und einem Tipp-Spiel.">
+  <title>Tippo – Schreibtraining</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/logo.svg">
+  <link rel="stylesheet" href="./assets/site.css">
+  <script defer src="./assets/app.js"></script>
+  <script defer src="./assets/game.js"></script>
+</head>
+<body data-v="home">
+<svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M10.8 2.9a2 2 0 0 1 2.4 0l8 6.2c.5.4.8 1 .8 1.6v8.8a2 2 0 0 1-2 2h-5.5v-6h-5v6H4a2 2 0 0 1-2-2v-8.8c0-.6.3-1.2.8-1.6z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><rect x="2" y="11" width="5" height="11" rx="2"/><rect x="9.5" y="2" width="5" height="20" rx="2"/><rect x="17" y="7" width="5" height="15" rx="2"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8h-5a2 2 0 0 1-2-2V2zM7 12a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h5a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1zM15 2v4h4z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zm1-15a1 1 0 1 0-2 0v4H7a1 1 0 1 0 0 2h4v4a1 1 0 1 0 2 0v-4h4a1 1 0 1 0 0-2h-4z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v17a1 1 0 0 1-1.5.9L12 18.6l-5.5 3.3A1 1 0 0 1 5 21V4a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-pie" viewBox="0 0 24 24"><path d="M11 2.1A10 10 0 1 0 21.9 13H11zM13 2v9h9a10 10 0 0 0-9-9z"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m14 1-11 13h7l-1 9 12-13h-7z"/></symbol>
+  <symbol id="i-set" viewBox="0 0 24 24"><path d="M2 5a1.5 1.5 0 0 1 1.5-1.5H7a3 3 0 0 1 5 0h8.5a1.5 1.5 0 0 1 0 3H12a3 3 0 0 1-5 0H3.5A1.5 1.5 0 0 1 2 5zm0 7a1.5 1.5 0 0 1 1.5-1.5H14a3 3 0 0 1 5 0h1.5a1.5 1.5 0 0 1 0 3H19a3 3 0 0 1-5 0H3.5A1.5 1.5 0 0 1 2 12zm0 7a1.5 1.5 0 0 1 1.5-1.5H8a3 3 0 0 1 5 0h7.5a1.5 1.5 0 0 1 0 3H13a3 3 0 0 1-5 0H3.5A1.5 1.5 0 0 1 2 19z"/></symbol>
+  <symbol id="i-panel" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M5 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3zm4 2h2v14H9z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M4.2 4.2a2 2 0 0 1 2.8 0l5 5 5-5A2 2 0 0 1 19.8 7l-5 5 5 5a2 2 0 0 1-2.8 2.8l-5-5-5 5A2 2 0 1 1 4.2 17l5-5-5-5a2 2 0 0 1 0-2.8z"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M4 8.5a1.7 1.7 0 0 1 2.4 0l5.6 5.6 5.6-5.6A1.7 1.7 0 0 1 20 11l-6.8 6.8a1.7 1.7 0 0 1-2.4 0L4 11a1.7 1.7 0 0 1 0-2.5z"/></symbol>
+  <symbol id="i-game" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M7 5H17a5 5 0 0 1 4.9 4.1l1 5.4a3.8 3.8 0 0 1-6.5 3.3L15 16H9l-1.4 1.8a3.8 3.8 0 0 1-6.5-3.3l1-5.4A5 5 0 0 1 7 5zm.2 3a1 1 0 0 0-1 1v1H5a1 1 0 0 0 0 2h1.2v1a1 1 0 0 0 2 0v-1h1.2a1 1 0 0 0 0-2H8.2V9a1 1 0 0 0-1-1zm8.3 3a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zm3-2.6a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M12 2 2.8 6.2 12 10.5l9.2-4.3zM2 8v9.5a1 1 0 0 0 .6.9l8.4 3.8V12.1zm20 0-9 4.1v10.1l8.4-3.8a1 1 0 0 0 .6-.9z"/></symbol>
+  <symbol id="i-medal" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2a7 7 0 0 0-5.5 11.3l-2.2 6.6 4-1.2 2.6 3.3 1.1-4 1.1 4 2.6-3.3 4 1.2-2.2-6.6A7 7 0 0 0 12 2zm0 3 1.2 2.4 2.7.4-2 1.9.5 2.7L12 11.1l-2.4 1.3.5-2.7-2-1.9 2.7-.4z"/></symbol>
+</svg>
+
+<div class="app" id="app">
+  <aside class="side" id="side" aria-label="Seitenleiste">
+    <div class="sbh">
+      <button class="mark" id="bMark" type="button" aria-label="Seitenleiste öffnen" aria-controls="side" aria-expanded="false" title="Seitenleiste öffnen"><img src="./assets/logo.svg" width="52" height="16" alt=""></button>
+      <img class="sblogo" src="./assets/logo.svg" width="108" height="33" alt="Tippo">
+      <button class="icon-button side-close" id="bCol" type="button" aria-label="Seitenleiste schließen" title="Seitenleiste schließen"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <nav class="nav-group" aria-label="Schreibtraining">
+      <button class="si" data-page="start" aria-label="Start" title="Start"><svg class="i" aria-hidden="true"><use href="#i-home"/></svg><span>Start</span></button>
+      <button class="si" data-page="progress" aria-label="Fortschritt" title="Fortschritt"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg><span>Fortschritt</span></button>
+      <button class="si" data-act="texts" aria-label="Texte" title="Texte" aria-haspopup="dialog"><svg class="i" aria-hidden="true"><use href="#i-doc"/></svg><span>Texte</span></button>
+      <button class="si" data-page="game" aria-label="Spiel" title="Spiel"><svg class="i" aria-hidden="true"><use href="#i-game"/></svg><span>Spiel</span></button>
+    </nav>
+    <div class="nav-group sg">
+      <button class="si" id="bGes" aria-label="Gesicherte Texte" title="Gesicherte Texte"><svg class="i" aria-hidden="true"><use href="#i-book"/></svg><span>Gesichert</span></button>
+      <button class="si" id="sAna" aria-label="Fehleranalyse" title="Fehleranalyse"><svg class="i" aria-hidden="true"><use href="#i-pie"/></svg><span>Fehleranalyse</span></button>
+      <button class="si" id="bDrill" aria-label="Schwächen üben" title="Schwächen üben"><svg class="i" aria-hidden="true"><use href="#i-bolt"/></svg><span>Schwächen üben</span></button>
+      <button class="si" id="bSet" aria-label="Einstellungen" title="Einstellungen"><svg class="i" aria-hidden="true"><use href="#i-set"/></svg><span>Einstellungen</span></button>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
+
+  <div class="shell" id="shell">
+    <header class="top">
+      <a href="#start" aria-label="Tippo Startseite"><img src="./assets/logo.svg" width="100" height="30" alt=""></a>
+      <button class="acc" id="bAcc" hidden>ID <b>…</b></button>
+      <button class="icon-button" data-act="side" aria-label="Seitenleiste öffnen" aria-controls="side" aria-expanded="false"><svg class="i" aria-hidden="true"><use href="#i-panel"/></svg></button>
+    </header>
+    <main>
+      <section class="stage pg pg-s" aria-labelledby="h1">
+        <div class="stage-content">
+          <span class="k">Schreibtraining · Klasse 7–10</span>
+          <h1 class="d" id="h1" tabindex="-1">Jetzt<br><em>tippen.</em></h1>
+          <p class="lead" id="lead">Wähle einen Text und leg mit einer Übung oder einem Test los.</p>
+          <div class="cur">
+            <div><span class="k">Aktueller Text</span><b class="d" id="curTxt">Vorlagen werden geladen</b></div>
+            <button class="pill o s" id="curBtn" aria-haspopup="dialog" aria-controls="textd" aria-expanded="false">Ändern</button>
+          </div>
+          <div class="acts">
+            <button class="pill primary" id="bPlay">Üben</button>
+            <div class="split">
+              <button class="pill o" id="bTest">Test starten</button>
+              <button class="pill o sm" id="bMore" aria-expanded="false" aria-controls="mMore" aria-label="Weitere Modi"><svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></button>
+              <div class="menu" id="mMore" hidden>
+                <button id="bSprint"><svg class="i" aria-hidden="true"><use href="#i-bolt"/></svg><span><b>Sprint</b><small>60 Sekunden tippen</small></span></button>
+                <button data-page="game"><svg class="i" aria-hidden="true"><use href="#i-game"/></svg><span><b>Wortpost</b><small>Wörter als Pakete verschicken</small></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="goal">
+          <div class="ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" id="ringFg" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="326.7"/></svg>
+            <div class="mid"><b class="d" id="ringT">0:00</b><small>Heute geübt</small></div>
+          </div>
+          <div class="chips"><span class="chip">Serie <i id="chStreak">0 Tage</i></span><span class="chip">Rang <i id="chRank">Bronze</i></span></div>
+        </div>
+      </section>
+
+      <section class="sec pg pg-p" aria-labelledby="progressHeading">
+        <h1 class="d page-title" id="progressHeading" tabindex="-1">Dein Fortschritt</h1>
+        <div class="cards">
+          <div class="box rk"><span class="k">Rang</span><div class="rkh"><span id="pRankI"></span><div class="big d" id="pRank">Bronze</div></div><progress id="pXp" max="100" value="0" aria-label="Erfahrung bis zum nächsten Rang"></progress><small class="k" id="pXpT"></small><div class="ladder" id="ladder"></div></div>
+          <div class="box"><span class="k">Netto-Anschläge pro Minute</span><svg class="spark" id="spark" viewBox="0 0 300 70" preserveAspectRatio="none" role="img" aria-label="Tempo-Verlauf"></svg><small class="k" id="pAvg"></small></div>
+          <div class="box"><span class="k">Heute geübt</span><div class="big d" id="pToday">0:00</div><small class="k" id="pTodayT"></small></div>
+        </div>
+        <h2 class="d section-title">Abzeichen</h2>
+        <div class="badges" id="badges"></div>
+      </section>
+
+      <section class="sec pg pg-g" aria-labelledby="gameHeading">
+        <span class="k">Spielmodus · 45 Sekunden</span>
+        <h1 class="d page-title" id="gameHeading" tabindex="-1">Wort<span>post.</span></h1>
+        <p class="game-lead">Tippe die Aufschrift, um ein Paket abzuschicken. Je drei richtige Wörter in Folge bringen mehr Punkte. Ein Tippfehler unterbricht die Serie.</p>
+        <div class="game-card">
+          <div class="game-metrics">
+            <div><span class="k">Restzeit</span><b class="d" id="gameTime">0:45</b></div>
+            <div><span class="k">Punkte</span><b class="d" id="gameScore">0</b></div>
+            <div><span class="k">Serie</span><b class="d" id="gameStreak">0</b></div>
+            <div><span class="k">Rekord</span><b class="d" id="gameBest">0</b></div>
+          </div>
+          <progress id="gameClock" max="45" value="45" aria-label="Verbleibende Spielzeit"></progress>
+          <div class="game-belt">
+            <div class="parcel parcel-current"><svg class="i" aria-hidden="true"><use href="#i-box"/></svg><span class="k">Jetzt tippen</span><strong id="gameWord" aria-live="polite">–</strong></div>
+            <div class="parcel"><svg class="i" aria-hidden="true"><use href="#i-box"/></svg><span class="k">Danach</span><strong id="gameNext">–</strong></div>
+            <div class="parcel"><svg class="i" aria-hidden="true"><use href="#i-box"/></svg><span class="k">In der Warteschlange</span><strong id="gameLater">–</strong></div>
+          </div>
+          <div class="game-controls">
+            <label for="gameInput" class="sr-only">Paketaufschrift tippen</label>
+            <input id="gameInput" type="text" placeholder="Paketaufschrift tippen" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" disabled>
+            <button class="pill" type="button" id="gameStart">Spiel starten</button>
+          </div>
+          <p class="game-status" id="gameStatus" role="status">Ein fertiges Wort wird automatisch verschickt.</p>
+        </div>
+      </section>
+    </main>
+    <footer><span>© <span id="yr">2026</span> Tippo</span><span>Texte und Ergebnisse bleiben auf diesem Gerät.</span></footer>
+  </div>
+
+  <nav class="tabs" id="tabs" aria-label="Navigation">
+    <button data-page="start"><svg class="i" aria-hidden="true"><use href="#i-home"/></svg>Start</button>
+    <button data-act="texts" aria-haspopup="dialog"><svg class="i" aria-hidden="true"><use href="#i-doc"/></svg>Texte</button>
+    <button data-page="progress"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg>Fortschritt</button>
+    <button data-page="game"><svg class="i" aria-hidden="true"><use href="#i-game"/></svg>Spiel</button>
+    <button data-act="set"><svg class="i" aria-hidden="true"><use href="#i-set"/></svg>Einstellungen</button>
+  </nav>
+</div>
+
+<section class="ov" id="run" aria-label="Schreiben">
+  <div class="bar"><i id="pb"></i></div><div class="bar t"><i id="tb"></i></div>
+  <div class="rtop"><span class="k" id="rInfo"></span><button class="pill o s" id="runExit" type="button">Beenden <kbd>Esc</kbd></button></div>
+  <div class="rbody">
+    <div class="mets">
+      <div class="met"><div class="n d" id="mT">0</div><span class="k">Anschläge/Min.</span></div>
+      <div class="met"><div class="n d" id="mA">100<small>%</small></div><span class="k">Genauigkeit</span></div>
+      <div class="met"><div class="n d" id="mZ">0:00</div><span class="k" id="mZk">Zeit</span></div>
+    </div>
+    <div class="tp" id="tp"></div>
+    <div class="run-input">
+      <label for="cap" class="sr-only">Schreibfeld</label>
+      <textarea id="cap" placeholder="Hier tippen, um zu schreiben" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" rows="1"></textarea>
+    </div>
+    <div class="hint" id="hint"></div>
+    <div class="kbw"><div class="kb" id="kbRun" aria-hidden="true"></div></div>
+  </div>
+</section>
+
+<section class="ov" id="done" aria-labelledby="dTitle">
+  <div class="dwrap">
+    <div>
+      <span class="k" id="dKick"></span><h2 class="d" id="dTitle" tabindex="-1">Stark gemacht.</h2><div class="score d" id="dScore">0<small>Netto-Anschläge pro Minute</small></div>
+      <div class="dacts"><button class="pill" id="dAgain">Nochmal</button><button class="pill o" id="dDrill">Schwächen üben</button><button class="pill o" id="dCert">Urkunde</button><button class="pill o" id="dHome">Fertig</button></div>
+    </div>
+    <div class="dside">
+      <div class="dcard"><span class="k">Tempo-Verlauf</span><canvas id="chart" aria-label="Tempo-Verlauf"></canvas></div>
+      <div class="dcard"><span class="k">Auswertung</span><div class="row" id="dTags"></div><div class="xpbar"><i id="dXp"></i></div><span class="k" id="dXpT"></span></div>
+      <div class="dcard" id="dHeatC"><span class="k">Schwächen-Karte</span><div class="kbw"><div class="kb" id="kbDone" aria-hidden="true"></div></div></div>
+    </div>
+  </div>
+</section>
+<div id="cd" aria-live="assertive"><div><small>Mach dich bereit</small><br><b class="d" id="cdN">3</b></div></div>
+<div id="toast" role="status"></div>
+
+<dialog id="stopd" aria-labelledby="stopTitle">
+  <h3 class="d" id="stopTitle">Test beenden?</h3>
+  <p>Dein bisheriges Ergebnis wird gespeichert.</p>
+  <div class="dr"><button class="pill l s" id="keepWriting" autofocus>Weiterschreiben</button><button class="pill s" id="endTest">Test beenden</button></div>
+</dialog>
+
+<dialog id="textd" aria-labelledby="textTitle">
+  <div class="dialog-head"><h3 class="d" id="textTitle">Text auswählen</h3><button class="icon-button" id="textClose" aria-label="Textauswahl schließen" autofocus><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+  <div class="filters" id="filters" role="group" aria-label="Textgruppen"></div>
+  <div class="grid" id="grid"></div>
+  <div class="dr text-actions"><button class="pill l s" id="textImport">TXT importieren</button><button class="pill s" id="textAdd"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg>Eigener Text</button></div>
+</dialog>
+
+<dialog id="dlg" aria-labelledby="testHeading"><form method="dialog" id="fdlg"><h3 class="d" id="testHeading">Test starten</h3>
+<label class="f2" for="iN">Name</label><input type="text" id="iN" required maxlength="40" autocomplete="off"><label class="f2" for="iK">Klasse</label><input type="text" id="iK" required maxlength="12" autocomplete="off">
+<label class="f2" for="iM">Maximale Dauer (Minuten)</label><input type="number" id="iM" min="1" max="180" value="10" required><label class="f2" for="iW">Anschläge (0 = ganzer Text)</label><input type="number" id="iW" min="0" max="6000" value="0">
+<div class="dr"><button type="button" class="pill l s" id="dC">Abbrechen</button><button class="pill s">Los geht’s</button></div></form></dialog>
+<dialog id="setd" aria-labelledby="settingsHeading"><h3 class="d" id="settingsHeading">Einstellungen</h3>
+<div class="opt"><label id="sScaleLabel" for="sScale">Schriftgröße<small>Für den Text beim Schreiben</small></label><input type="range" id="sScale" min="90" max="170" step="10"></div>
+<div class="opt"><label id="sFontLabel" for="sFont">Schriftart<small>Serif, Sans oder Schreibmaschine</small></label><select id="sFont"><option value="serif">Serif</option><option value="sans">Sans</option><option value="mono">Schreibmaschine</option></select></div>
+<div class="opt"><label id="sDailyLabel" for="sDaily">Tägliche Topleistung<small>Minuten Training pro Tag</small></label><select id="sDaily"><option>5</option><option>10</option><option>15</option><option>20</option><option>30</option></select></div>
+<div class="opt"><label id="sGoalLabel" for="sGoal">Ziel-Tempo<small>Markiert das Zieltempo im Text</small></label><select id="sGoal"><option value="0">aus</option><option>100</option><option>150</option><option>200</option><option>250</option><option>300</option></select></div>
+<div class="opt"><label id="sGlowLabel" for="sGlow">Leuchttaste und Fingerhinweis<small>Zeigt die nächste Taste</small></label><input type="checkbox" class="sw" id="sGlow"></div>
+<div class="opt"><label id="sFingLabel" for="sFing">Fingerfarben<small>Tastatur nach Fingern einfärben</small></label><input type="checkbox" class="sw" id="sFing"></div>
+<div class="opt"><label id="sSoundLabel" for="sSound">Ton<small>Leises Klicken, tiefer Ton bei Fehlern</small></label><input type="checkbox" class="sw" id="sSound"></div>
+<div class="opt"><label id="sLockLabel" for="sLock">Korrektur gesperrt<small>Rücktaste ist aus</small></label><input type="checkbox" class="sw" id="sLock"></div>
+<div class="opt" id="oDir"><span>Ordner verbinden<small>Texte und gesicherte Texte als Dateien speichern (Edge/Chrome)</small></span><button class="pill l s" id="sDir">Wählen</button></div>
+<div class="dr"><button class="pill s" id="sClose">Fertig</button></div></dialog>
+<dialog id="sheetd"><div class="sheet" id="sheet"></div><div class="dr"><button class="pill s" id="shP">Drucken</button><button class="pill l s" id="shI">Als Bild</button><button class="pill l s" id="shT">Als TXT</button><button class="pill l s" id="shC">Schließen</button></div></dialog>
+<dialog id="certd"><h3 class="d">Deine Urkunde</h3><img id="certImg" alt="Urkunde"><div class="dr"><button class="pill s" id="ceP">Drucken</button><button class="pill l s" id="ceS">Als Bild speichern</button><button class="pill l s" id="ceC">Schließen</button></div></dialog>
+<dialog id="gen"><div id="genb"></div><div class="dr"><button class="pill l s" id="genC">Schließen</button></div></dialog>
+<dialog id="pastd" aria-labelledby="addHeading"><h3 class="d" id="addHeading">Eigener Text</h3><label class="f2" for="pN">Name der Textvorlage</label><input type="text" id="pN" maxlength="60" autocomplete="off" placeholder="Mein Übungstext"><label class="f2" for="pT">Text schreiben oder einfügen</label><textarea id="pT" required></textarea><p class="er" id="textError" role="alert" hidden></p><div class="dr"><button class="pill l s" id="pX">Abbrechen</button><button class="pill s" id="pS">Speichern und auswählen</button></div></dialog>
+<input type="file" id="fin" accept=".txt,text/plain" multiple hidden>
+<dialog id="idd"><h3 class="d">Deine ID</h3><p id="idW"></p><div class="idbox" id="idBox"></div>
+<p class="idn">Die ID ersetzt E-Mail und Passwort. Sie wird zufällig in diesem Browser erzeugt, steht nirgends öffentlich und wird nicht an einen Server gesendet. Gib sie nicht weiter.</p>
+<p class="ids" id="idS" role="status"></p>
+<div class="idr"><button class="pill s" id="idCopy">ID kopieren</button><button class="pill l s" id="idEye">Anzeigen</button><button class="pill l s" id="idZip">Als ZIP herunterladen</button></div>
+<div class="idm"><button class="lnk" id="idRest">Mit ID anmelden</button><button class="lnk" id="idNew">Neue ID erzeugen</button></div>
+<div class="dr"><button class="pill s" id="idOk">Habe ich gesichert</button></div></dialog>
+<dialog id="rsd"><h3 class="d">Mit ID anmelden</h3><p>Gib deine ID ein und wähle die ZIP-Sicherung.</p>
+<label class="f2" for="rsId">ID</label><input type="text" id="rsId" placeholder="#…" autocomplete="off" spellcheck="false">
+<label class="f2" for="rsF">ZIP-Sicherung</label><input type="file" id="rsF" accept=".zip,application/zip">
+<p class="er" id="rsE" role="alert"></p>
+<div class="dr"><button class="pill l s" id="rsX">Abbrechen</button><button class="pill s" id="rsGo">Anmelden</button></div></dialog>
+</body>
+</html>

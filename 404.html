@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#070708">
+  <meta name="robots" content="noindex">
+  <title>404 – Seite nicht gefunden · Tippo</title>
+  <style>html{color-scheme:dark;background:#070708}</style>
+  <link id="errorStyle" rel="stylesheet">
+</head>
+<body class="error-page">
+  <main class="error-card">
+    <img id="errorLogo" width="112" height="34" alt="Tippo" hidden>
+    <span class="d error-code">404</span>
+    <h1 class="d">Seite nicht gefunden</h1>
+    <p>Überprüfe die Adresse oder kehre zur Startseite von Tippo zurück.</p>
+    <a class="pill" id="errorHome" href="/">Zum Schreibtraining</a>
+  </main>
+  <script>
+    (() => {
+      const first = location.pathname.split("/")[1];
+      const setBase = base => {
+        const logo = document.getElementById("errorLogo");
+        document.getElementById("errorStyle").href = base + "assets/site.css";
+        document.getElementById("errorHome").href = base + (location.protocol === "file:" ? "index.html" : "");
+        logo.src = base + "assets/logo.svg";
+        logo.hidden = false;
+      };
+      if (location.protocol === "file:") { setBase("./"); return; }
+      if (!first || !location.pathname.slice(first.length + 1).startsWith("/")) { setBase("/"); return; }
+      const project = "/" + first + "/";
+      fetch(project + "assets/logo.svg", { method: "HEAD" })
+        .then(response => setBase(response.ok && response.headers.get("Content-Type")?.includes("image/svg+xml") ? project : "/"))
+        .catch(() => setBase("/"));
+    })();
+  </script>
+</body>
+</html>

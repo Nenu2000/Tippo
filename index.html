@@ -3,7 +3,7 @@
 <title>Tippo – Schreibtraining</title>
 <script>try{var c=JSON.parse(localStorage.getItem("tippoC")||"{}"),r=document.documentElement,m=c.scheme||"auto",w=innerWidth;r.dataset.t=(m==="dark"||(m==="auto"&&matchMedia("(prefers-color-scheme:dark)").matches))?"dark":"light";r.style.setProperty("--scale",(c.scale||100)/100);r.dataset.dev=w<700?"phone":w<1100?"tablet":"pc";r.dataset.pg=location.hash==="#fortschritt"?"progress":"start";if(w>=1100&&localStorage.getItem("tippoSb")==="1")r.classList.add("sx")}catch(e){document.documentElement.dataset.t="light";document.documentElement.dataset.dev="pc";document.documentElement.dataset.pg="start"}</script>
 <style>
-/* ===== Design: Nike-Kraft (große Kondensschrift, Schwarz/Weiß) trifft Rolex-Ruhe (Serif, Weißraum, Gold-Haarlinien) ===== */
+
 :root{--bg:#F5F6F8;--card:#fff;--ink:#101114;--mut:#5E6470;--line:#E2E5EA;--faint:#B3B9C3;--acc:#4D6BFE;--accT:#3452E1;--accInk:#fff;--gold:#C8A96A;--wash:#ECEEF2;--err:#C62828;--errbg:rgba(198,40,40,.12);--stg:#111114;--stgL:#1C1C21;--onyx:#070708;--sc:var(--scale,1);
 --disp:"Bahnschrift","Arial Narrow","Roboto Condensed","Helvetica Neue",Arial,sans-serif;--ui:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Arial,sans-serif;--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--mono:"Cascadia Mono",Consolas,"Courier New",monospace;--tf:var(--serif);color-scheme:light}
 :root[data-t=dark]{--bg:#070708;--card:#111114;--ink:#FFFFFF;--mut:#A0A0AB;--line:#1C1C21;--faint:#4A4A55;--acc:#4D6BFE;--accT:#8DA0FF;--accInk:#FFFFFF;--wash:#15151A;--err:#FF8A7A;--errbg:rgba(255,138,122,.16);color-scheme:dark}
@@ -13,19 +13,19 @@
 button,select,input,textarea{font:inherit;color:inherit}button{cursor:pointer}
 .d{font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.005em;font-variation-settings:"wdth" 78;font-stretch:condensed}
 .k{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
-/* Pillen-Knöpfe */
+
 .pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 30px;border-radius:999px;border:2px solid transparent;background:var(--acc);color:var(--accInk);font:700 19px var(--disp);font-variation-settings:"wdth" 78;text-transform:uppercase;letter-spacing:.04em;transition:transform .15s ease,background .2s ease,color .2s ease,border-color .2s ease}
 .pill:hover{transform:translateY(-1px);filter:brightness(1.06)}.pill:active{transform:none}
 .pill.o{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}.pill.o:hover{border-color:#fff;background:rgba(255,255,255,.08);filter:none}
 .pill.l{background:transparent;color:var(--ink);border-color:var(--line)}.pill.l:hover{border-color:var(--ink);filter:none}
 .pill.s{min-height:42px;padding:0 20px;font-size:16px}
 .lnk{background:none;border:0;padding:6px 2px;color:var(--ink);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-bottom:2px solid transparent;transition:border-color .2s ease}.lnk:hover{border-color:var(--acc)}
-/* Kopfzeile */
+
 .top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(18px,4vw,56px);max-width:1280px;margin:0 auto}
 .top img{height:38px;width:auto;display:block}.top .logo-d{display:none}:root[data-t=dark] .top .logo-l{display:none}:root[data-t=dark] .top .logo-d{display:block}
 .top nav{display:flex;gap:clamp(12px,2.4vw,30px);align-items:center;flex-wrap:wrap}
 main{max-width:1280px;margin:0 auto;padding:0 clamp(18px,4vw,56px) 60px;display:flex;flex-direction:column;gap:clamp(48px,7vw,96px)}
-/* Bühne (immer dunkel) */
+
 .stage{position:relative;overflow:hidden;background:#0E0E0F;color:#fff;border-radius:32px;padding:clamp(28px,5vw,72px);display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.8fr);gap:40px;align-items:end}
 
 .stage .k{color:rgba(255,255,255,.62)}
@@ -37,7 +37,7 @@ h1{margin:14px 0 18px;font-size:clamp(64px,13vw,176px);line-height:.84;letter-sp
 .ring circle{fill:none;stroke-width:10;stroke-linecap:round}.ring .bg{stroke:rgba(255,255,255,.12)}.ring .fg{stroke:var(--acc);transition:stroke-dashoffset .8s cubic-bezier(.2,.8,.2,1)}
 .ring .mid{position:absolute;inset:0;display:grid;place-content:center;text-align:center}.ring .mid b{font-size:46px;line-height:1}.ring .mid small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}.chip{display:inline-flex;gap:6px;align-items:center;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.1);font-size:13px;font-weight:600}.chip i{font-style:normal;color:var(--gold)}
-/* Abschnitte */
+
 .sec h2{margin:6px 0 22px;font-size:clamp(34px,5.4vw,64px);line-height:.92}
 .sec .hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px 24px}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
@@ -57,7 +57,7 @@ progress{width:100%;height:8px;border-radius:99px;border:0;background:var(--wash
 .bd svg{width:28px;height:28px;stroke:var(--gold);fill:none;stroke-width:1.6}.bd b{font-size:14px}.bd span{font-size:12px;color:var(--mut)}
 .spark{width:100%;height:70px;display:block}
 footer{max-width:1280px;margin:0 auto;padding:0 clamp(18px,4vw,56px) 40px;color:var(--mut);font-size:13px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
-/* ===== Fokus-Ansicht (Üben/Test) ===== */
+
 .ov{position:fixed;inset:0;z-index:50;background:#070708;color:#fff;display:none;flex-direction:column;overflow:auto}
 body[data-v=run] #run,body[data-v=done] #done{display:flex}body[data-v=run],body[data-v=done]{overflow:hidden}
 .bar{height:5px;background:rgba(255,255,255,.1)}.bar i{display:block;height:100%;width:0;background:var(--acc);transition:width .12s linear}.bar.t i{background:rgba(255,255,255,.55)}
@@ -75,10 +75,10 @@ body[data-v=run] #run,body[data-v=done] #done{display:flex}body[data-v=run],body
 .kb{display:flex;flex-direction:column;align-items:center;gap:6px}.kb .r{display:flex;gap:6px}
 .key{width:min(46px,6vw);height:min(42px,5.6vw);display:flex;align-items:center;justify-content:center;border-radius:9px;border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.55);font-size:13px;font-weight:600;transition:background .1s ease,color .1s ease}
 .key.on{background:var(--acc);border-color:var(--acc);color:#fff}.key.sp{width:min(330px,50vw)}
-/* Countdown */
+
 #cd{position:fixed;inset:0;z-index:70;background:rgba(7,7,8,.94);display:none;place-content:center;text-align:center;color:#fff}#cd.on{display:grid}#cd b{font:700 min(40vw,360px)/.85 var(--disp);font-variation-settings:"wdth" 78;color:var(--acc);animation:pop .9s ease both}#cd small{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6)}
 @keyframes pop{0%{transform:scale(.7);opacity:0}25%{transform:scale(1);opacity:1}100%{transform:scale(1.08);opacity:.2}}
-/* Ergebnis */
+
 .dwrap{max-width:1180px;width:100%;margin:0 auto;padding:clamp(20px,5vh,56px) clamp(18px,4vw,56px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;min-height:100%}
 .dwrap h2{margin:8px 0 0;font-size:clamp(40px,6vw,84px);line-height:.9}
 .dwrap>*{min-width:0}.score{font:700 clamp(96px,17vw,250px)/.8 var(--disp);font-variation-settings:"wdth" 78;font-variant-numeric:tabular-nums;margin:10px 0 0;color:#fff}.score small{display:block;margin-top:14px;font:600 14px var(--ui);letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)}
@@ -87,7 +87,7 @@ body[data-v=run] #run,body[data-v=done] #done{display:flex}body[data-v=run],body
 .row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.tag{padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.1);font-size:13px;font-weight:600}.tag.e{background:rgba(255,138,122,.18);color:#FF8A7A}.tag.g{background:rgba(200,169,106,.2);color:var(--gold)}
 .dacts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .xpbar{height:8px;border-radius:99px;background:rgba(255,255,255,.14);overflow:hidden;margin-top:10px}.xpbar i{display:block;height:100%;background:var(--gold);width:0;transition:width 1s cubic-bezier(.2,.8,.2,1)}
-/* Dialoge */
+
 dialog{max-height:92vh;overflow:auto;border:1px solid var(--line);border-radius:26px;background:var(--card);color:var(--ink);padding:clamp(22px,4vw,38px);max-width:min(92vw,720px);width:100%;box-shadow:0 20px 60px rgba(0,0,0,.25)}dialog::backdrop{background:rgba(10,10,10,.55);backdrop-filter:blur(3px)}
 dialog h3{margin:0 0 18px;font-size:40px;line-height:.95}dialog label.f2{display:block;margin:16px 0 4px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:600}
 dialog input[type=text],dialog input[type=number],dialog textarea,dialog select{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:14px;background:var(--bg);font-size:17px}dialog textarea{height:180px;resize:vertical}
@@ -106,7 +106,7 @@ dialog input:focus,dialog textarea:focus,dialog select:focus{outline:0;border-co
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 @media print{body>*:not(dialog){display:none!important}dialog{position:static;border:0;background:none;padding:0;max-width:none;box-shadow:none}dialog::backdrop{display:none}#sheetd,.sheet{background:none}.sheet{border:0;max-height:none;overflow:visible;padding:0;font-size:11pt}.dr{display:none}#certd h3{display:none}}
 
-/* ===== Seitenleiste (ChatGPT-Stil: schmale Schiene, aufklappbar) ===== */
+
 :root{--pad:clamp(16px,3.4vw,48px);--rw:64px;--sw:64px}
 :root[data-dev=pc].sx{--rw:288px;--sw:288px}
 :root[data-dev=tablet].sx{--sw:300px}
@@ -135,7 +135,7 @@ select,input,textarea,button{-webkit-appearance:none;appearance:none;-webkit-tap
 .side .tc{min-height:0;padding:12px 14px;border-radius:14px;gap:2px;align-content:start;background:#15151A;border-color:#24242A;color:#fff}.side .tc:hover{transform:none;border-color:#4A4A55}.side .tc.on{border-color:var(--acc)}
 .side .tc .t{font-size:22px;line-height:1}.side .tc .g{font-size:11px}.side .tc .m{font-size:12px;gap:8px}.side .tc.add{display:none}
 .scrim{position:fixed;inset:0;z-index:55;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .25s ease}
-/* Schiene (eingeklappt): nur Symbole */
+
 :root:is([data-dev=pc],[data-dev=tablet]):not(.sx) .sblogo,:root:is([data-dev=pc],[data-dev=tablet]):not(.sx) .sbt,:root:is([data-dev=pc],[data-dev=tablet]):not(.sx) .tx,:root:is([data-dev=pc],[data-dev=tablet]):not(.sx) .si span,:root:is([data-dev=pc],[data-dev=tablet]):not(.sx) .sg .sec-h{display:none}
 :root:is([data-dev=pc],[data-dev=tablet]):not(.sx) .side{padding:12px 10px}
 :root:is([data-dev=pc],[data-dev=tablet]):not(.sx) .si{justify-content:center;width:44px;padding:0;margin:0 auto}
@@ -150,11 +150,11 @@ select,input,textarea,button{-webkit-appearance:none;appearance:none;-webkit-tap
 .top{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:flex-start;max-width:none;margin:0;padding:12px var(--pad);gap:14px;background:var(--bg);border-bottom:1px solid var(--line)}
 .top img{height:34px}
 .acc{height:38px;padding:0 14px;border:1.5px solid var(--line);border-radius:999px;background:var(--card);font-size:13px;font-weight:600}
-/* Seiten (Start / Fortschritt) in derselben index.html */
+
 :root[data-pg=start] .pg-p{display:none}:root[data-pg=progress] .pg-s{display:none}
 main{max-width:1180px;padding:clamp(20px,3vw,40px) var(--pad) clamp(48px,6vw,88px);gap:clamp(40px,6vw,80px)}
 footer{max-width:1180px;padding:0 var(--pad) 40px;border-top:0}
-/* Bühne */
+
 .stage{overflow:visible;background:var(--stg);border:1px solid var(--stgL);align-items:center;gap:clamp(28px,4vw,56px);grid-template-columns:minmax(0,1.6fr) minmax(250px,.7fr)}
 h1{margin:16px 0 22px}.stage p.lead{margin-bottom:24px}
 .cur{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:460px;margin:0 0 28px;padding:12px 12px 12px 20px;border:1px solid #24242A;border-radius:22px;background:#15151A}
@@ -174,7 +174,7 @@ h1{margin:16px 0 22px}.stage p.lead{margin-bottom:24px}
 .ring .mid small{max-width:11ch;margin:6px auto 0;line-height:1.3;letter-spacing:.1em}
 .chip svg{width:16px;height:16px;flex:none}
 .sec h2{margin-bottom:22px}
-/* Fortschritt */
+
 .cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
 .box{display:flex;flex-direction:column;gap:10px}.box progress,.box .spark{margin-top:auto}.box small.k{margin-top:0!important}
 .rk .rkh{display:flex;align-items:center;gap:14px;margin:8px 0 6px}.rk .rkh svg{width:56px;height:56px;flex:none}.rk .big{margin:0}
@@ -182,14 +182,14 @@ h1{margin:16px 0 22px}.stage p.lead{margin-bottom:24px}
 .rl{display:grid;justify-items:center;gap:3px;min-width:0;padding:8px 2px;border:1.5px solid var(--line);border-radius:14px;opacity:.45}.rl svg{width:24px;height:24px}.rl small{font-size:9px;font-weight:600;color:var(--mut)}
 .rl.done{opacity:.8}.rl.on{opacity:1;border-color:var(--acc)}
 .bsec{margin-top:clamp(28px,4vw,44px);padding-top:22px;border-top:1px solid var(--line)}.bsec .badges{margin-top:14px}
-/* Schreibansicht */
+
 .rbody{justify-content:flex-start;padding-top:clamp(8px,2vh,24px);gap:clamp(16px,3vh,32px)}
 .mets{order:-1;grid-template-columns:repeat(3,auto);justify-content:start;gap:clamp(28px,6vw,88px)}
 .met{border-top:0;padding-top:0}.met .n{font-size:clamp(38px,5.4vw,68px)}
 .tp{order:1}.echo{order:2}.hint{order:3}.kbw{order:4;margin-top:auto;padding-bottom:8px}
 .rtop{border-bottom:1px solid rgba(255,255,255,.08)}
 .dacts .pill:first-child{min-height:60px;padding:0 40px}
-/* Eigene Auswahlfelder, kein Apple-Look */
+
 .cs{position:relative;display:inline-block}
 .cs-n{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
 .cs-b{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:150px;height:44px;padding:0 14px;border:1.5px solid var(--line);border-radius:14px;background:var(--bg);color:var(--ink);font-size:16px;text-align:left}
@@ -205,7 +205,7 @@ h1{margin:16px 0 22px}.stage p.lead{margin-bottom:24px}
 .opt input[type=range]::-moz-range-thumb{width:16px;height:16px;border:3px solid var(--card);border-radius:50%;background:var(--acc)}
 dialog input[type=number]{-moz-appearance:textfield}
 dialog input::file-selector-button{margin-right:12px;padding:8px 16px;border:1.5px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);font:600 14px var(--ui)}
-/* Konto-Dialog (vorübergehend deaktiviert) */
+
 .idbox{margin:16px 0 10px;padding:18px;border:1.5px dashed var(--gold);border-radius:16px;background:var(--wash);text-align:center;font:700 clamp(15px,3vw,22px)/1.35 var(--mono);letter-spacing:.06em;word-break:break-all}
 .idn{margin:0;font-size:13px;color:var(--mut)}.ids{min-height:1.5em;margin:10px 0 0;font-size:14px;color:var(--accT);font-weight:600}
 .idr{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.idm{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:20px;padding-top:14px;border-top:1px solid var(--line)}
@@ -214,12 +214,12 @@ dialog input[type=file]{width:100%;padding:12px;border:1.5px dashed var(--line);
 .note{display:none;gap:14px;align-items:flex-start;margin:14px var(--pad) 0;padding:16px;border:1.5px solid var(--gold);border-radius:18px;background:color-mix(in srgb,var(--gold) 14%,var(--card));font-size:14px}
 .note svg{flex:none;width:28px;height:28px;fill:var(--gold);stroke:var(--gold)}.note b{display:block;font-size:16px;margin-bottom:4px}.note p{margin:0;color:var(--mut)}.note .pill{margin-top:12px}
 .tabs{display:none}
-/* TABLET */
+
 :root[data-dev=tablet] .stage{grid-template-columns:1fr;gap:28px}
 :root[data-dev=tablet] .goal{grid-template-columns:auto 1fr;justify-items:start;text-align:left;gap:20px 32px}
 :root[data-dev=tablet] .goal .chips{flex-direction:column;align-items:flex-start;justify-content:center}
 :root[data-dev=tablet] .cards{grid-template-columns:repeat(2,minmax(0,1fr))}:root[data-dev=tablet] .cards .rk{grid-column:1/-1}
-/* HANDY: Hinweis, Bottom-Sheet, Tableiste */
+
 :root[data-dev=phone] .app{padding-left:0}
 :root[data-dev=phone] .note.on{display:flex}
 :root[data-dev=phone] .top{padding-top:10px;padding-bottom:10px}:root[data-dev=phone] .top img{height:30px}
@@ -371,7 +371,7 @@ const DEF = [
   ["Klasse 10 - Q3", "Reisen bildet, dieser Satz ist alt, aber immer noch wahr. Wer andere Länder besucht, lernt fremde Kulturen kennen. Man hört andere Sprachen, probiert neue Speisen und sieht Bauwerke, von denen man bisher nur gelesen hat. Solche Erfahrungen verändern den eigenen Blick auf die Welt. Man wird toleranter und offener. Natürlich kostet Reisen Zeit und Geld. Doch die Erinnerungen, die man mitbringt, sind oft unbezahlbar. Es geht nicht darum, möglichst viele Länder zu besuchen. Es geht darum, ein Land wirklich kennenzulernen. Wer nur an den Strand fliegt und im Hotel bleibt, verpasst das Wesentliche. Wer sich die Zeit nimmt, lernt viel mehr. Man kann mit Einheimischen reden. Man kann Märkte besuchen. Man kann kleinere Orte entdecken. Oft sind es diese Momente, die im Gedächtnis bleiben. Nicht die großen Sehenswürdigkeiten, sondern die kleinen Begegnungen. Ein freundliches Lächeln, ein unerwartetes Gespräch, ein ungewohntes Essen. Solche Dinge vergisst man nicht. Reisen ist auch eine Schule fürs Leben. Man muss sich organisieren. Man muss mit Problemen umgehen. Wenn der Zug Verspätung hat oder das Hotel nicht passt, muss man eine Lösung finden. Das stärkt die Selbstständigkeit. Man lernt, geduldig zu sein. Man lernt, flexibel zu sein. Auch sprachlich kann man viel dazulernen. Selbst wenn man eine Sprache nicht gut spricht, versteht man sich irgendwie. Hände und Füße helfen oft mehr als gedacht. Viele junge Menschen nutzen die Zeit nach der Schule für eine Reise. Ein Jahr im Ausland kann prägend sein. Man lernt eine neue Sprache, findet neue Freunde, bekommt neue Perspektiven. Manche entdecken dabei, was sie beruflich machen wollen. Andere merken, wie gut sie es zu Hause haben. In jedem Fall kommen sie als andere Menschen zurück. Reisen ist eine Investition in sich selbst. Es muss nicht immer weit weg sein. Auch die Nachbarländer haben viel zu bieten. Man muss nicht in ein Flugzeug steigen. Ein Zugticket reicht manchmal schon. Wichtig ist, neugierig zu bleiben. Wer offen ist, erlebt überall etwas Neues."],
   ["Klasse 10 - Q4", "Die Frage nach dem richtigen Beruf beschäftigt viele Jugendliche. Nach der Schule stehen zahlreiche Wege offen: Ausbildung, Studium oder ein freiwilliges Jahr. Wichtig ist, dass man sich Zeit nimmt und die eigenen Interessen und Stärken ernst nimmt. Praktika und Gespräche mit Berufstätigen können helfen. Auch ein Umweg ist kein Fehler. Manchmal findet man gerade dadurch, was wirklich zu einem passt. Der erste Beruf ist selten der letzte. Viele Menschen wechseln im Laufe ihres Lebens mehrmals die Stelle. Das ist völlig normal. Früher war es üblich, jahrzehntelang im gleichen Betrieb zu bleiben. Heute ist das anders. Die Arbeitswelt verändert sich schnell. Neue Berufe entstehen, alte verschwinden. Man sollte deshalb bereit sein, lebenslang zu lernen. Wer neugierig bleibt, kann sich leichter anpassen. Aber was ist eigentlich ein guter Beruf? Sicherheit ist vielen wichtig. Man möchte eine Stelle, die nicht morgen schon weg ist. Ein gutes Gehalt spielt auch eine Rolle. Man will sich schließlich etwas leisten können. Aber Geld allein macht nicht glücklich. Wer seine Arbeit hasst, leidet darunter. Man verbringt schließlich viel Zeit damit. Ein Beruf sollte auch Freude machen. Man sollte das Gefühl haben, etwas Sinnvolles zu tun. Man sollte sich mit seinen Kollegen verstehen. Man sollte stolz auf das sein, was man macht. Das klingt vielleicht idealistisch. Aber es gibt viele Menschen, die so arbeiten. Sie sind oft zufriedener als die, die nur ans Geld denken. Natürlich kann man nicht immer alles gleichzeitig haben. Manchmal muss man Kompromisse eingehen. Vielleicht ist der Job nicht perfekt, aber er passt gerade. Vielleicht ist das Gehalt niedriger, dafür ist die Arbeit sinnvoll. Jeder muss für sich selbst entscheiden, was ihm wichtig ist. Es kann helfen, eine Liste zu machen. Was kann ich gut? Was macht mir Spaß? Was ist mir wichtig? Wenn man diese Fragen beantwortet, kommt man seinem Wunschberuf oft näher. Auch Gespräche mit Freunden und Familie können helfen. Sie kennen einen gut und können ehrlich sein. Manchmal sieht man sich selbst nicht so klar, wie andere es tun. Wichtig ist, dass man auf sein Bauchgefühl hört. Wenn ein Beruf sich falsch anfühlt, sollte man lieber weitersuchen. Es gibt nicht nur einen richtigen Beruf. Es gibt viele Wege, glücklich zu werden. Man muss nur bereit sein, sie zu entdecken. Der erste Schritt ist meist der schwerste. Aber wer ihn geht, findet oft schnell weiter."]
 ];
-/* Fingerübungen: feste Wortlisten aus den jeweiligen Tasten (immer gleich, damit Bestwerte vergleichbar bleiben) */
+
 function fin(chars,n,seed){let s=seed,o=[];const r=()=>{s=(s*1103515245+12345)&0x7fffffff;return s};for(let i=0;i<n;i++){let w="";for(let j=0,l=3+r()%3;j<l;j++)w+=chars[r()%chars.length];o.push(w)}return o.join(" ")}
 const FIN=[["Finger - Grundreihe",fin("asdfjklö",90,7)],["Finger - Obere Reihe",fin("qwertzuiopü",90,11)],["Finger - Untere Reihe",fin("yxcvbnm",90,13)],
  ["Finger - Alle Buchstaben",fin("abcdefghijklmnopqrstuvwxyz",100,17)],["Finger - Umlaute",fin("äöüßaousnl",90,19)],["Finger - Zahlen",fin("1234567890",70,23)]];
@@ -408,7 +408,7 @@ const rankOf=xp=>RANKS.reduce((a,r,i)=>xp>=r[1]?i:a,0);
 function streak(){let n=0,d=new Date();if(!P.days[day(d)])d.setDate(d.getDate()-1);while(P.days[day(d)]>0){n++;d.setDate(d.getDate()-1)}return n}
 function toast(t){const e=$("toast");e.textContent=t;e.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("on"),3400)}
 
-/* ---------- Speicher: Ordner (File System Access) oder Browser-Speicher (IndexedDB) ---------- */
+
 const dbp=new Promise((res,rej)=>{const r=indexedDB.open("tippo",1);r.onupgradeneeded=()=>{["texte","ges","cfg"].forEach(n=>r.result.createObjectStore(n))};r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});
 async function idb(st,mode,fn){const d=await dbp;return new Promise((res,rej)=>{const t=d.transaction(st,mode),r=fn(t.objectStore(st));t.oncomplete=()=>res(r&&r.result);t.onerror=()=>rej(t.error)})}
 let TD=null,GD=null;
@@ -425,7 +425,7 @@ const listG=async()=>(GD?await fsNames(GD):await idb("ges","readonly",s=>s.getAl
 const getG=n=>GD?fsRead(GD,n):idb("ges","readonly",s=>s.get(n));
 async function putG(n,t){const ex=await listG();let f=n,k=0;while(ex.includes(f)){k++;f=n.replace(/\.txt$/,"_"+k+".txt")}
  if(GD)await fsWrite(GD,f,t);else await idb("ges","readwrite",s=>s.put(t,f));onSaved();return f}
-/* Standardtexte anlegen; bei neuer TEXT_VERSION werden die alten Standardtexte ersetzt */
+
 async function seed(){
  const l=await listT(),v=store.g("tippoTV",0),all=[...DEF,...FIN];
  if(v<TEXT_VERSION){
@@ -434,7 +434,7 @@ async function seed(){
  }else for(const [n,t] of all)if(!l.includes(n+".txt"))await putT0(n+".txt",t);
 }
 
-/* ---------- Texte und Startseite ---------- */
+
 let T=[],FLT="Alle";
 const S={view:"home",run:false,test:false,sprint:false,drill:false,target:"",typed:"",t0:0,lim:0,errs:0,cnt:0,k1:{},e1:{},samp:[],ls:0,tpl:"",tname:"",cur:"",nm:"",kl:"",last:null};
 const grp=n=>{const b=n.replace(/\.txt$/i,""),m=b.match(/^(.+?) - (.+)$/);return m?[m[1],m[2]]:["Eigene Texte",b]};
@@ -462,7 +462,7 @@ function home(){
  $("badges").innerHTML=BADGES.map(b=>`<div class="bd${P.badges.includes(b.id)?" on":""}" title="${esc(b.d)}">${MEDAL}<b>${b.n}</b><span>${b.d}</span></div>`).join("");
  $("bDrill").hidden=!Object.keys(P.ke).length}
 
-/* ---------- Tastatur, Ton, Zähler ---------- */
+
 function mkKb(el){const keys={};ROWS.forEach(r=>{const d=document.createElement("div");d.className="r";[...r].forEach(c=>{const k=document.createElement("div");k.className="key";k.textContent=c==='ß'?c:c.toUpperCase();keys[c]=k;d.appendChild(k)});el.appendChild(d)});
  const d=document.createElement("div");d.className="r";const k=document.createElement("div");k.className="key sp";keys[" "]=k;d.appendChild(k);el.appendChild(d);return keys}
 const KR=mkKb($("kbRun")),KD=mkKb($("kbDone"));
@@ -470,7 +470,7 @@ let ac;function snd(f,d,g){if(!C.sound)return;try{ac=ac||new AudioContext();cons
 function count(el,to){if(matchMedia("(prefers-reduced-motion:reduce)").matches){el.firstChild.nodeValue=to;return}const t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/900);el.firstChild.nodeValue=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)}
 function setView(v){S.view=v;document.body.dataset.v=v;if(v==="home"){home();scrollTo({top:0})}}
 
-/* ---------- Üben und Testen ---------- */
+
 function prep(t,want){let b=t.replace(/\s+/g," ").trim();if(!b)return"";
  if(!want){if(b.length>MAXC){const c=b.lastIndexOf(". ",MAXC);b=b.slice(0,c>MAXC/2?c+1:MAXC)}return b}
  let o="";while(o.length<want)o+=b+" ";return o.slice(0,want).trim()}
@@ -542,7 +542,7 @@ function chart(cv){const w=cv.clientWidth,h=cv.clientHeight;if(!w)return;const d
  if(C.goal){x.setLineDash([5,5]);x.strokeStyle="rgba(255,255,255,.5)";const y=h-C.goal/mx*h;x.beginPath();x.moveTo(0,y);x.lineTo(w,y);x.stroke();x.setLineDash([])}
  x.strokeStyle=getComputedStyle(document.documentElement).getPropertyValue("--acc");x.lineWidth=3;x.lineJoin="round";x.beginPath();sp.forEach((v,i)=>{const px=i/(sp.length-1)*w,py=h-v/mx*h;i?x.lineTo(px,py):x.moveTo(px,py)});x.stroke()}
 
-/* ---------- Test: Dialog, Countdown, Blatt Papier ---------- */
+
 function countdown(cb){const e=$("cd"),n=$("cdN");let i=3;S.view="cd";e.classList.add("on");
  const step=()=>{if(!i){e.classList.remove("on");cb();return}n.textContent=i;n.style.animation="none";void n.offsetWidth;n.style.animation="";snd(660,.08,.05);i--;setTimeout(step,900)};step()}
 function wrap(t,cols){const out=[];for(const para of t.replace(/\r/g,"").split("\n")){if(!para.trim()){out.push("");continue}if(para.length<=cols){out.push(para);continue}let cu="";
@@ -565,7 +565,7 @@ async function sheetPng(){const W=1240,H=1754,M=120,LH=38,c=document.createEleme
  const cols=Math.floor((W-2*M)/x.measureText("M").width),L=wrap($("sheet").textContent,cols).split("\n"),lpp=Math.floor((H-2*M)/LH),pages=Math.max(1,Math.ceil(L.length/lpp)),base=curFn.replace(/\.txt$/i,"");
  for(let p=0;p<pages;p++){x.fillStyle="#fff";x.fillRect(0,0,W,H);x.fillStyle="#111";x.font="26px 'Courier New',monospace";L.slice(p*lpp,(p+1)*lpp).forEach((l,i)=>x.fillText(l,M,M+i*LH));
   x.fillStyle="#888";x.font="20px 'Segoe UI',sans-serif";x.fillText("Tippo – Seite "+(p+1)+" von "+pages,M,H-70);dl(await png(c),base+(pages>1?"_Seite"+(p+1):"")+".png");await new Promise(r=>setTimeout(r,300))}}
-/* Urkunde als Bild */
+
 async function certificate(){
  const r=S.last;if(!r)return;const W=1754,H=1240,c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");
  x.fillStyle="#FBF8F1";x.fillRect(0,0,W,H);x.strokeStyle="#C8A96A";x.lineWidth=6;x.strokeRect(56,56,W-112,H-112);x.lineWidth=2;x.strokeRect(80,80,W-160,H-160);
@@ -580,7 +580,7 @@ async function certificate(){
  x.fillText(r.date.toLocaleDateString("de-DE",{day:"numeric",month:"long",year:"numeric"}),W/2,1120);
  const u=c.toDataURL("image/png");$("certImg").src=u;$("certd").showModal()}
 
-/* ---------- Dialoge ---------- */
+
 const modal=()=>document.querySelector("dialog[open]");
 function openTest(){$("iN").value=C.name;$("iK").value=C.kl;$("dlg").showModal();($("iN").value?$("iM"):$("iN")).focus()}
 $("bTest").onclick=openTest;$("dC").onclick=()=>$("dlg").close();
@@ -594,7 +594,7 @@ $("certd").addEventListener("close",()=>{});$("ceC").onclick=()=>$("certd").clos
 $("shC").onclick=()=>$("sheetd").close();$("shP").onclick=()=>window.print();$("shT").onclick=()=>dl(new Blob(["\ufeff"+wrap($("sheet").textContent,70).replace(/\n/g,"\r\n")],{type:"text/plain;charset=utf-8"}),curFn);$("shI").onclick=sheetPng;$("genC").onclick=()=>$("gen").close();
 document.addEventListener("click",e=>{const a=e.target.closest("[data-go]");if(a)document.getElementById(a.dataset.go).scrollIntoView({behavior:"smooth"});
  const f=e.target.closest(".f[data-f]");if(f){FLT=f.dataset.f;home()}const t=e.target.closest(".tc[data-n]");if(t){pick(t.dataset.n)}if(e.target.closest("#gAdd"))$("addd").showModal()});
-/* Schwächen üben: Wörter mit den fehleranfälligsten Tasten (über alle Übungen hinweg) */
+
 function drill(){
  const ks=Object.keys(P.ke).filter(k=>P.ke[k]&&k.trim()).sort((a,b)=>P.ke[b]/P.kc[b]-P.ke[a]/P.kc[a]||P.ke[b]-P.ke[a]).slice(0,3);
  if(!ks.length){toast("Noch keine Fehler aufgezeichnet.");return}
@@ -603,7 +603,7 @@ function drill(){
  for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}
  let words=pool.slice(0,22);if(words.length<8)words=words.concat(ks.map(k=>k+k+k+" "+k+k+" "+k+k+k));
  S.tpl=words.join(" ");S.tname="Schwächentraining · "+ks.map(k=>k.toUpperCase()).join(" ");S.drill=true;startRun(false,0,0)}
-/* Einstellungen */
+
 const darkNow=()=>C.scheme==="dark"||(C.scheme==="auto"&&matchMedia("(prefers-color-scheme:dark)").matches);
 matchMedia("(prefers-color-scheme:dark)").addEventListener("change",()=>{if(C.scheme==="auto")apply()});
 function apply(){const r=document.documentElement;r.dataset.t=darkNow()?"dark":"light";r.dataset.f=C.font;r.style.setProperty("--scale",C.scale/100)}
@@ -614,7 +614,7 @@ $("sAna").onclick=()=>{$("setd").close();const k=Object.keys(P.kc).filter(x=>P.k
  $("genb").innerHTML="<h3 class='d'>Fehleranalyse</h3>"+(k.length?"<table><tr><th>Taste</th><th>Fehler</th><th>Gefordert</th><th>Anteil</th></tr>"+k.map(x=>`<tr><td>${esc(x===" "?"Leer":x.toUpperCase())}</td><td>${P.ke[x]}</td><td>${P.kc[x]}</td><td>${pct(P.ke[x]/P.kc[x]*100)}</td></tr>`).join("")+"</table>":"<p>Noch keine Fehler aufgezeichnet.</p>");$("gen").showModal()};
 $("bGes").onclick=async()=>{const l=(await listG()).reverse(),b=$("genb");b.innerHTML="<h3 class='d'>Gesicherte Texte</h3>"+(l.length?"":"<p>Noch keine gesicherten Texte.</p>")+"<div class='lst'></div>";
  l.slice(0,60).forEach(n=>{const x=document.createElement("button");x.className="pill l s";x.textContent=n;x.onclick=async()=>{$("gen").close();sheet(await getG(n),n)};b.querySelector(".lst").appendChild(x)});$("gen").showModal()};
-/* Texte hinzufügen */
+
 $("aX").onclick=()=>$("addd").close();$("pX").onclick=()=>$("pastd").close();$("aF").onclick=()=>{$("addd").close();$("fin").click()};
 $("aC").onclick=async()=>{const d=new Date(),p=n=>String(n).padStart(2,"0");$("addd").close();$("pN").value=`Zwischenablage ${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}${p(d.getMinutes())}`;$("pT").value="";$("pastd").showModal();
  try{const t=await navigator.clipboard.readText();if(t)$("pT").value=t}catch(e){}$("pT").focus()};
@@ -624,7 +624,7 @@ $("pS").onclick=async()=>{const t=$("pT").value;if(!t.trim()){alert("Es ist kein
 $("fin").onchange=async e=>{let last="";for(const f of e.target.files){const n=f.name.replace(/[\\/:*?"<>|]/g,"_");try{await putT(n,await f.text());last=n}catch(x){alert("Konnte "+f.name+" nicht speichern.")}}e.target.value="";if(last)await refresh(last)};
 if(window.showDirectoryPicker){$("sDir").onclick=async()=>{try{const h=await showDirectoryPicker({mode:"readwrite",id:"tippo"});await connect(h);await idb("cfg","readwrite",s=>s.put(h,"root"));store.s("tippoTV",0);await seed();await refresh();$("setd").close();toast("Ordner verbunden: "+h.name)}catch(e){if(e.name!=="AbortError")alert("Ordner konnte nicht verbunden werden: "+e.message)}}}else $("oDir").hidden=true;
 
-/* ---------- Tastatur-Eingabe: über ein verstecktes Eingabefeld, damit Totasten (^ ´), ß/Umlaute, Altgr und Bildschirmtastaturen funktionieren ---------- */
+
 const cap=$("cap");
 ["copy","cut","paste"].forEach(ev=>document.addEventListener(ev,e=>{if(S.view==="run"&&!modal())e.preventDefault()}));
 $("tp").addEventListener("contextmenu",e=>e.preventDefault());
@@ -648,7 +648,7 @@ document.querySelectorAll("dialog").forEach(d=>d.addEventListener("close",()=>se
 $("run").addEventListener("pointerdown",()=>setTimeout(()=>cap.focus({preventScroll:true}),0));
 
 
-/* ---------- Seitenleiste, Seiten, Menü, eigene Auswahlfelder ---------- */
+
 const root=document.documentElement,devNow=()=>innerWidth<700?"phone":innerWidth<1100?"tablet":"pc";
 function setDev(){const d=devNow();root.dataset.dev=d;if(d!=="phone")root.classList.remove("so");
  if(d==="pc")root.classList.toggle("sx",localStorage.getItem("tippoSb")==="1");else root.classList.remove("sx")}
@@ -666,7 +666,7 @@ function go(p,push){p=p==="progress"?"progress":"start";root.dataset.pg=p;
  const h=p==="progress"?"#fortschritt":"#start";if(push!==false&&location.hash!==h)location.hash=h;scrollTo({top:0})}
 addEventListener("hashchange",()=>go(location.hash==="#fortschritt"?"progress":"start",false));
 go(root.dataset.pg,false);
-/* Aufklapp-Menü neben Test starten */
+
 const mm=$("mMore"),mb=$("bMore");
 const menu=o=>{mm.hidden=!o;mb.setAttribute("aria-expanded",o)};
 mb.onclick=e=>{e.stopPropagation();menu(mm.hidden)};
@@ -683,7 +683,7 @@ for(const id of["bGes","sAna","bDrill","bSet"])$(id).addEventListener("click",()
 try{if(sessionStorage.getItem("tippoPh")!=="1")$("phoneNote").classList.add("on")}catch(e){$("phoneNote").classList.add("on")}
 $("noteX").onclick=()=>{$("phoneNote").classList.remove("on");try{sessionStorage.setItem("tippoPh","1")}catch(e){}};
 const _home=home;home=function(){_home();$("curTxt").textContent=S.tname||"Kein Text";if(A)$("bAcc").querySelector("b").textContent="…"+A.id.slice(-5)};
-/* Eigene Auswahlfelder (kein System-Look) */
+
 function enhanceSelect(sel){
  const w=document.createElement("div");w.className="cs";sel.parentNode.insertBefore(w,sel);w.appendChild(sel);sel.classList.add("cs-n");sel.tabIndex=-1;sel.setAttribute("aria-hidden","true");
  const b=document.createElement("button");b.type="button";b.className="cs-b";b.setAttribute("aria-haspopup","listbox");b.setAttribute("aria-expanded","false");
@@ -698,7 +698,7 @@ function enhanceSelect(sel){
 document.addEventListener("click",e=>{document.querySelectorAll(".cs-m:not([hidden])").forEach(m=>{if(!m.parentNode.contains(e.target)){m.hidden=true;m.previousSibling.setAttribute("aria-expanded","false")}})});
 ["sFont","sDaily","sGoal","sScheme"].forEach(id=>enhanceSelect($(id)));
 
-/* ---------- Konto per ID: vorübergehend deaktiviert (ID_ON=false) ---------- */
+
 const ID_ON=false;
 const AL="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 function newId(){const a=new Uint8Array(31);crypto.getRandomValues(a);let o="#";a.forEach(b=>{o+=AL[b%32]});return o}
@@ -763,7 +763,7 @@ $("rsGo").onclick=async()=>{
   A={id:d.id,dev:(A&&A.dev)||"",made:Date.now(),ack:true};await saveA();location.reload()}
  catch(e){er.textContent="Die Sicherung konnte nicht geladen werden: "+e.message}};
 
-/* ---------- Start ---------- */
+
 (async()=>{apply();const fresh=await authInit();try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
  try{const h=await idb("cfg","readonly",s=>s.get("root"));if(h&&await h.queryPermission({mode:"readwrite"})==="granted")await connect(h)}catch(e){}
  try{await seed()}catch(e){console.error("seed:",e)}await refresh();focusCap();if(fresh&&ID_ON)showId("Willkommen bei Tippo! Das ist deine persönliche ID.",true)})();

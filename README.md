@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Logo: Datei in /assets ablegen und den Pfad anpassen -->
-<img src="assets/logo.png" alt="Tippo" width="180">
+<img src="assets/Logo.png" alt="Tippo" width="180">
 
 # Tippo
 
